@@ -12,6 +12,7 @@ call plug#begin()
 
     " Tree explorer
     Plug 'scrooloose/nerdtree'
+    map <C-n> :NERDTreeToggle<CR>
 
 call plug#end()
 
