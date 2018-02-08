@@ -10,6 +10,9 @@ call plug#begin()
     " Status bar
     Plug 'vim-airline/vim-airline'
 
+    " Tree explorer
+    Plug 'scrooloose/nerdtree'
+
 call plug#end()
 
 " Use colorschemes from onehalf plugged in above
