@@ -25,7 +25,7 @@ colorscheme solarized
 let g:airline_theme = 'solarized'
 
 " improve mode switch times
-set timeoutlen=1000 ttimeoutlen=10
+set timeoutlen=1000 ttimeoutlen=0
 
 set number         " display line numbers
 set textwidth=0    " no linebreaking
