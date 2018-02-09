@@ -22,6 +22,9 @@ call plug#begin()
     " Quick commenting
     Plug 'scrooloose/nerdcommenter'
 
+    " Python tools
+    Plug 'klen/python-mode'
+
 
 call plug#end()
 
