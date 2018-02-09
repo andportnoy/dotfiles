@@ -3,9 +3,10 @@ call plug#begin()
 
     " Python linter, requires flake8, run with <F7>
     Plug 'nvie/vim-flake8'
+    
+    " Cool colorschemes
+    Plug 'sonph/onehalf', {'rtp': 'vim'}
 
-    " solarized color schemes
-    Plug 'altercation/vim-colors-solarized'
 
     " Status bar with themes
     Plug 'vim-airline/vim-airline'
@@ -23,9 +24,8 @@ call plug#begin()
 
 call plug#end()
 
-set background=light
-"colorscheme solarized
-let g:airline_theme = 'solarized'
+colorscheme onehalfdark
+let g:airline_theme='onehalfdark'
 
 " improve mode switch times
 set timeoutlen=1000 ttimeoutlen=0
@@ -65,6 +65,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-nnoremap <C-Left> :tabprevious<CR>
-nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-Left> :cprev<CR>
+nnoremap <C-Right> :cnext<CR>
 
