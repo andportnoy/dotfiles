@@ -25,6 +25,9 @@ call plug#begin()
     " Python tools
     Plug 'klen/python-mode'
 
+    " tmux listens to ctrl-hjkl
+    Plug 'christoomey/vim-tmux-navigator'
+
 
 call plug#end()
 
