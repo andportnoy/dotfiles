@@ -4,8 +4,8 @@ call plug#begin()
     " Python linter, requires flake8, run with <F7>
     Plug 'nvie/vim-flake8'
 
-    " Cool colorschemes
-    Plug 'sonph/onehalf', {'rtp': 'vim'}
+    " solarized color schemes
+    Plug 'altercation/vim-colors-solarized'
 
     " Status bar
     Plug 'vim-airline/vim-airline'
@@ -14,11 +14,13 @@ call plug#begin()
     Plug 'scrooloose/nerdtree'
     map <C-n> :NERDTreeToggle<CR>
 
+    " Git wrapper
+    Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
-" Use colorschemes from onehalf plugged in above
-colorscheme onehalfdark
-let g:airline_theme='onehalfdark'
+set background=light
+colorscheme solarized
 
 set number         " display line numbers
 set textwidth=0    " no linebreaking
@@ -49,7 +51,7 @@ set nofoldenable
 set splitbelow      " vertical split appears below
 set splitright      " horizontal split appears on the right
 
-" remap split navigation 
+" remap split navigation
 " e.g. Ctrl + j instead of first Ctrl + w, then j
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
