@@ -22,8 +22,9 @@ call plug#begin()
     " Quick commenting
     Plug 'scrooloose/nerdcommenter'
 
-    " Python tools
-    Plug 'klen/python-mode'
+    " Python tools, throws invalid reference master on PlugInstall,
+    " installed manually.
+    " Plug 'klen/python-mode'
 
     " tmux listens to ctrl-hjkl
     Plug 'christoomey/vim-tmux-navigator'
