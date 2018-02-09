@@ -22,8 +22,6 @@ call plug#begin()
     " Quick commenting
     Plug 'scrooloose/nerdcommenter'
 
-    " Autocompletion
-    Plug 'valloric/youcompleteme'
 
 call plug#end()
 
