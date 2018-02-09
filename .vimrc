@@ -7,8 +7,9 @@ call plug#begin()
     " solarized color schemes
     Plug 'altercation/vim-colors-solarized'
 
-    " Status bar
+    " Status bar with themes
     Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 
     " Tree explorer
     Plug 'scrooloose/nerdtree'
@@ -21,6 +22,10 @@ call plug#end()
 
 set background=light
 colorscheme solarized
+let g:airline_theme = 'solarized'
+
+" improve mode switch times
+set timeoutlen=1000 ttimeoutlen=10
 
 set number         " display line numbers
 set textwidth=0    " no linebreaking
@@ -59,5 +64,4 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
-
 
