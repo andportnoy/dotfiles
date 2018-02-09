@@ -18,6 +18,9 @@ call plug#begin()
     " Git wrapper
     Plug 'tpope/vim-fugitive'
 
+    " Motion completion
+    Plug 'easymotion/vim-easymotion'
+
 call plug#end()
 
 set background=light
@@ -26,7 +29,7 @@ let g:airline_theme = 'solarized'
 
 " improve mode switch times
 set timeoutlen=1000 ttimeoutlen=0
-
+let mapleader = ","
 set number         " display line numbers
 set textwidth=0    " no linebreaking
 set colorcolumn=81 " Show a red bar just past 80 chars
@@ -38,7 +41,6 @@ set smarttab
 " exempt make files from tab expansion
 filetype plugin on
 autocmd FileType make setlocal noexpandtab
-
 set softtabstop=4  " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 set shiftround     " round indent to multiple of 'shiftwidth'
 set autoindent     " align the new line indent with the previous line
