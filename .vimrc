@@ -18,15 +18,19 @@ call plug#begin()
     " Git wrapper
     Plug 'tpope/vim-fugitive'
 
+    " Quick commenting
+    Plug 'scrooloose/nerdcommenter'
+
 call plug#end()
 
 set background=light
-colorscheme solarized
+"colorscheme solarized
 let g:airline_theme = 'solarized'
 
 " improve mode switch times
 set timeoutlen=1000 ttimeoutlen=0
 
+let mapleader = ","
 set number         " display line numbers
 set textwidth=0    " no linebreaking
 set colorcolumn=81 " Show a red bar just past 80 chars
