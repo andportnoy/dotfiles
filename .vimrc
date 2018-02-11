@@ -10,14 +10,14 @@ call plug#begin()
 
     " Status bar with themes
     Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    "Plug 'vim-airline/vim-airline-themes'
 
     " Tree explorer
     Plug 'scrooloose/nerdtree'
     map <C-n> :NERDTreeToggle<CR>
 
     " Git wrapper
-    Plug 'tpope/vim-fugitive'
+    "Plug 'tpope/vim-fugitive'
 
     " Quick commenting
     Plug 'scrooloose/nerdcommenter'
