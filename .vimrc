@@ -28,6 +28,9 @@ call plug#begin()
     " tmux listens to ctrl-hjkl
     Plug 'christoomey/vim-tmux-navigator'
 
+    " Sidebar with code tags
+    Plug 'majutsushi/tagbar'
+    nmap <F8> :TagbarToggle<CR>
 
 call plug#end()
 
