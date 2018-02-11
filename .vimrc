@@ -7,17 +7,16 @@ call plug#begin()
     " Cool colorschemes
     Plug 'sonph/onehalf', {'rtp': 'vim'}
 
-
     " Status bar with themes
     Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
+    "Plug 'vim-airline/vim-airline-themes'
 
     " Tree explorer
     Plug 'scrooloose/nerdtree'
     map <C-n> :NERDTreeToggle<CR>
 
     " Git wrapper
-    Plug 'tpope/vim-fugitive'
+    "Plug 'tpope/vim-fugitive'
 
     " Quick commenting
     Plug 'scrooloose/nerdcommenter'
@@ -29,6 +28,12 @@ call plug#begin()
     " tmux listens to ctrl-hjkl
     Plug 'christoomey/vim-tmux-navigator'
 
+    " Sidebar with code tags
+    Plug 'majutsushi/tagbar'
+    nmap <F8> :TagbarToggle<CR>
+
+    " LaTeX plugin
+    Plug 'lervag/vimtex'
 
 call plug#end()
 
@@ -51,6 +56,9 @@ set smarttab
 " exempt make files from tab expansion
 filetype plugin on
 autocmd FileType make setlocal noexpandtab
+
+" use cppman for C++ reference
+autocmd FileType cpp set keywordprg=cppman
 
 set softtabstop=4  " insert/delete 4 spaces when hitting a TAB/BACKSPACE
 set shiftround     " round indent to multiple of 'shiftwidth'
