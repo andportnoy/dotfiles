@@ -7,7 +7,6 @@ call plug#begin()
     " Cool colorschemes
     Plug 'sonph/onehalf', {'rtp': 'vim'}
 
-
     " Status bar with themes
     Plug 'vim-airline/vim-airline'
     "Plug 'vim-airline/vim-airline-themes'
@@ -31,6 +30,9 @@ call plug#begin()
     " Sidebar with code tags
     Plug 'majutsushi/tagbar'
     nmap <F8> :TagbarToggle<CR>
+
+    " LaTeX plugin
+    Plug 'lervag/vimtex'
 
 call plug#end()
 
