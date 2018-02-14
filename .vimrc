@@ -32,7 +32,7 @@ call plug#begin()
     nmap <F8> :TagbarToggle<CR>
 
     " LaTeX plugin
-    Plug 'lervag/vimtex'
+    " Plug 'lervag/vimtex'
 
 call plug#end()
 
@@ -43,6 +43,7 @@ let g:airline_theme='onehalfdark'
 set timeoutlen=1000 ttimeoutlen=0
 
 let mapleader = ","
+let maplocalleader = "\\"
 
 set number         " display line numbers
 set textwidth=0    " no linebreaking
