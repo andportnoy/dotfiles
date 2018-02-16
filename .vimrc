@@ -41,6 +41,12 @@ call plug#begin()
 
 call plug#end()
 
+" use system clipboard
+set clipboard=unnamed
+
+" show 5 lines of context around cursor
+set scrolloff=5
+
 colorscheme onehalfdark
 let g:airline_theme='onehalfdark'
 
