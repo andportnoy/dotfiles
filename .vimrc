@@ -14,6 +14,7 @@ call plug#begin()
     " Tree explorer
     Plug 'scrooloose/nerdtree'
     map <C-n> :NERDTreeToggle<CR>
+    let NERDTreeShowBookmarks=1
 
     " Git wrapper
     "Plug 'tpope/vim-fugitive'
