@@ -47,6 +47,7 @@ let g:airline_theme='onehalfdark'
 set timeoutlen=1000 ttimeoutlen=0
 
 let mapleader = ","
+let maplocalleader = "\\"
 
 set number         " display line numbers
 set textwidth=0    " no linebreaking
