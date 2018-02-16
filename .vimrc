@@ -50,7 +50,7 @@ let maplocalleader = "\\"
 
 set number         " display line numbers
 set textwidth=0    " no linebreaking
-set colorcolumn=81 " Show a red bar just past 80 chars
+set colorcolumn=80 " Show a red bar just past 79 chars
 set shiftwidth=4   " operation >> indents 4 columns; << unindents 4 columns
 set tabstop=4      " a hard TAB displays as 4 columns
 set expandtab      " insert spaces when hitting TABs
@@ -59,6 +59,8 @@ set smarttab
 " exempt make files from tab expansion
 filetype plugin on
 autocmd FileType make setlocal noexpandtab
+
+autocmd FileType tex setlocal textwidth=79
 
 " use cppman for C++ reference
 autocmd FileType cpp set keywordprg=cppman
