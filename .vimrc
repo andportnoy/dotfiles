@@ -31,7 +31,7 @@ call plug#begin()
 
     " Sidebar with code tags
     Plug 'majutsushi/tagbar'
-    nmap <F8> :TagbarToggle<CR>
+    nmap <C-t> :TagbarToggle<CR>
 
     " LaTeX plugin
     " Plug 'lervag/vimtex'
@@ -46,6 +46,9 @@ let g:airline_theme='onehalfdark'
 
 " improve mode switch times
 set timeoutlen=1000 ttimeoutlen=0
+
+set ttymouse=xterm2
+set mouse=a
 
 let mapleader = ","
 let maplocalleader = "\\"
@@ -90,6 +93,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-nnoremap <C-Left> :cprev<CR>
-nnoremap <C-Right> :cnext<CR>
+nnoremap <C-Up> :cprev<CR>
+nnoremap <C-Down> :cnext<CR>
+nmap <C-Left> :tabp<CR>
+nmap <C-Right> :tabn<CR>
+
 
