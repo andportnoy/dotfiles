@@ -17,7 +17,11 @@ call plug#begin()
     let NERDTreeShowBookmarks=1
 
     " Git wrapper
-    "Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-fugitive'
+
+    " Plug 'scrooloose/syntastic'
+
+    Plug 'airblade/vim-gitgutter'
 
     " Quick commenting
     Plug 'scrooloose/nerdcommenter'
