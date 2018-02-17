@@ -17,34 +17,43 @@ call plug#begin()
     let NERDTreeShowBookmarks=1
 
     " Git wrapper
-    "Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-fugitive'
+
+    " Plug 'scrooloose/syntastic'
+
+    Plug 'airblade/vim-gitgutter'
 
     " Quick commenting
     Plug 'scrooloose/nerdcommenter'
 
-    " Python tools
-    Plug 'klen/python-mode'
+    " Python tools, throws invalid reference master on PlugInstall,
+    " installed manually.
+    " Plug 'klen/python-mode'
 
     " tmux listens to ctrl-hjkl
     Plug 'christoomey/vim-tmux-navigator'
 
     " Sidebar with code tags
     Plug 'majutsushi/tagbar'
-    nmap <F8> :TagbarToggle<CR>
+    nmap <C-t> :TagbarToggle<CR>
 
-    " LaTeX plugin
-    Plug 'lervag/vimtex'
-
-    " LaTeX expansions
-    Plug 'brennier/quicktex'
 
 call plug#end()
+
+" use system clipboard
+set clipboard=unnamed
+
+" show 5 lines of context around cursor
+set scrolloff=5
 
 colorscheme onehalfdark
 let g:airline_theme='onehalfdark'
 
 " improve mode switch times
 set timeoutlen=1000 ttimeoutlen=0
+
+set ttymouse=xterm2
+set mouse=a
 
 let mapleader = ","
 let maplocalleader = "\\"
@@ -89,6 +98,9 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-nnoremap <C-Left> :cprev<CR>
-nnoremap <C-Right> :cnext<CR>
+nnoremap <C-Up> :cprev<CR>
+nnoremap <C-Down> :cnext<CR>
+nmap <C-Left> :tabp<CR>
+nmap <C-Right> :tabn<CR>
+
 
