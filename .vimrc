@@ -9,22 +9,24 @@ call plug#begin()
 
     " Status bar with themes
     Plug 'vim-airline/vim-airline'
-    "Plug 'vim-airline/vim-airline-themes'
 
     " Tree explorer
     Plug 'scrooloose/nerdtree'
     map <C-n> :NERDTreeToggle<CR>
     let NERDTreeShowBookmarks=1
 
-    " Git wrapper
-    Plug 'tpope/vim-fugitive'
+    Plug 'ctrlpvim/ctrlp.vim'
+    let g:ctrlp_types = ['fil']
+    let g:ctrlp_extensions = ['buffertag']
 
     " Plug 'scrooloose/syntastic'
 
-    Plug 'airblade/vim-gitgutter'
+    Plug 'tpope/vim-fugitive'
+
+    " Plug 'airblade/vim-gitgutter'
 
     " Quick commenting
-    Plug 'scrooloose/nerdcommenter'
+    " Plug 'scrooloose/nerdcommenter'
 
     " Python tools, throws invalid reference master on PlugInstall,
     " installed manually.
@@ -98,9 +100,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-nnoremap <C-Up> :cprev<CR>
-nnoremap <C-Down> :cnext<CR>
-nmap <C-Left> :tabp<CR>
-nmap <C-Right> :tabn<CR>
-
+noremap [q :cprev<CR>
+noremap ]q :cnext<CR>
+noremap <C-Left> :tabp<CR>
+noremap <C-Right> :tabn<CR>
 
