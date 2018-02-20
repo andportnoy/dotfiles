@@ -19,18 +19,11 @@ call plug#begin()
     let g:ctrlp_types = ['fil']
     let g:ctrlp_extensions = ['buffertag']
 
-    " Plug 'scrooloose/syntastic'
+    " Syntax checking
+    Plug 'scrooloose/syntastic'
 
+    " Git wrapper
     Plug 'tpope/vim-fugitive'
-
-    " Plug 'airblade/vim-gitgutter'
-
-    " Quick commenting
-    " Plug 'scrooloose/nerdcommenter'
-
-    " Python tools, throws invalid reference master on PlugInstall,
-    " installed manually.
-    " Plug 'klen/python-mode'
 
     " tmux listens to ctrl-hjkl
     Plug 'christoomey/vim-tmux-navigator'
