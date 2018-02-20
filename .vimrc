@@ -37,6 +37,10 @@ call plug#begin()
     Plug 'majutsushi/tagbar'
     nmap <C-t> :TagbarToggle<CR>
 
+    " LaTeX plugins
+    Plug 'lervag/vimtex'
+    Plug 'brennier/quicktex'
+
 
 call plug#end()
 
