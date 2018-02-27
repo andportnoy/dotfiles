@@ -32,8 +32,11 @@ call plug#begin()
     Plug 'majutsushi/tagbar'
     nmap <C-t> :TagbarToggle<CR>
 
-    " LaTeX plugins
+    " LaTeX continuous compilation
     Plug 'lervag/vimtex'
+    let g:vimtex_view_method = 'skim'
+
+    " LaTeX shortcuts
     Plug 'brennier/quicktex'
 
 
