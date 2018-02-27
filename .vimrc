@@ -68,10 +68,14 @@ set tabstop=4      " a hard TAB displays as 4 columns
 set expandtab      " insert spaces when hitting TABs
 set smarttab
 
-" exempt make files from tab expansion
+"""""""""""""""""""""""""""""""
+" File type specific settings "
+"""""""""""""""""""""""""""""""
 filetype plugin on
+" exempt make files from tab expansion
 autocmd FileType make setlocal noexpandtab
 
+" hard wrap at 79 columns in tex files
 autocmd FileType tex setlocal textwidth=79
 
 " use cppman for C++ reference
@@ -94,14 +98,19 @@ set nofoldenable
 set splitbelow      " vertical split appears below
 set splitright      " horizontal split appears on the right
 
-" remap split navigation
-" e.g. Ctrl + j instead of first Ctrl + w, then j
+""""""""""""""
+" Key remaps "
+""""""""""""""
+
+" Use C-hjkl for window navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+" Quickfix previous/next
 noremap [q :cprev<CR>
 noremap ]q :cnext<CR>
+" Switch tabs with Ctrl + arrows
 noremap <C-Left> :tabp<CR>
 noremap <C-Right> :tabn<CR>
 
