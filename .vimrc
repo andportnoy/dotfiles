@@ -39,6 +39,8 @@ call plug#begin()
     " LaTeX shortcuts
     Plug 'brennier/quicktex'
 
+    " Easy surround
+    Plug 'tpope/vim-surround'
 
 call plug#end()
 
