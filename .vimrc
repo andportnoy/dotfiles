@@ -21,6 +21,8 @@ call plug#begin()
 
     " Syntax checking
     Plug 'scrooloose/syntastic'
+    let g:syntastic_cpp_compiler = 'clang++'
+    let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
     " Git wrapper
     Plug 'tpope/vim-fugitive'
@@ -41,6 +43,9 @@ call plug#begin()
 
     " Easy surround
     Plug 'tpope/vim-surround'
+
+    " C++ highlighting
+    Plug 'octol/vim-cpp-enhanced-highlight'
 
 call plug#end()
 
