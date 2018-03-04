@@ -49,6 +49,8 @@ call plug#begin()
 
 call plug#end()
 
+map <Space> za
+
 " use system clipboard
 set clipboard=unnamed
 
