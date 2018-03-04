@@ -114,11 +114,10 @@ tnoremap <C-J> <C-W><C-J>
 tnoremap <C-K> <C-W><C-K>
 tnoremap <C-L> <C-W><C-L>
 tnoremap <C-H> <C-W><C-H>
-tnoremap <Esc> <C-W>N:q!<CR>
+tnoremap <C-\> <C-W>N:q!<CR>
 " Quickfix previous/next
 noremap [q :cprev<CR>
 noremap ]q :cnext<CR>
 " Switch tabs with Ctrl + arrows
 noremap <C-Left> :tabp<CR>
 noremap <C-Right> :tabn<CR>
-
