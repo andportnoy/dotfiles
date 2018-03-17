@@ -17,7 +17,8 @@ call plug#begin()
 
     Plug 'ctrlpvim/ctrlp.vim'
     let g:ctrlp_types = ['fil']
-    let g:ctrlp_extensions = ['buffertag']
+    let g:ctrlp_extensions = ['tag']
+    let g:ctrlp_cmd = 'CtrlPTag'
 
     " Syntax checking
     Plug 'scrooloose/syntastic'
@@ -46,6 +47,7 @@ call plug#begin()
 
     " C++ highlighting
     Plug 'octol/vim-cpp-enhanced-highlight'
+
 
 call plug#end()
 
