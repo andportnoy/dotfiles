@@ -10,7 +10,7 @@ call plug#begin()
     " Status bar with themes
     Plug 'vim-airline/vim-airline'
 
-    " Tree explorer
+    " Filesystem explorer
     Plug 'scrooloose/nerdtree'
     map <C-n> :NERDTreeToggle<CR>
     let NERDTreeShowBookmarks=1
@@ -24,9 +24,6 @@ call plug#begin()
     Plug 'scrooloose/syntastic'
     let g:syntastic_cpp_compiler = 'clang++'
     let g:syntastic_cpp_compiler_options = ' -std=c++11'
-
-    " Git wrapper
-    Plug 'tpope/vim-fugitive'
 
     " tmux listens to ctrl-hjkl
     Plug 'christoomey/vim-tmux-navigator'
