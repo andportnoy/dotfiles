@@ -15,15 +15,14 @@ call plug#begin()
     map <C-n> :NERDTreeToggle<CR>
     let NERDTreeShowBookmarks=1
 
+    " Python autocomplete
+    Plug 'davidhalter/jedi-vim'
+    let g:jedi#force_py_version = 3
+
     Plug 'ctrlpvim/ctrlp.vim'
     let g:ctrlp_types = ['fil']
     let g:ctrlp_extensions = ['tag']
     let g:ctrlp_cmd = 'CtrlPTag'
-
-    " Syntax checking
-    Plug 'scrooloose/syntastic'
-    let g:syntastic_cpp_compiler = 'clang++'
-    let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
     " tmux listens to ctrl-hjkl
     Plug 'christoomey/vim-tmux-navigator'
@@ -62,7 +61,6 @@ let g:airline_theme='onehalfdark'
 " improve mode switch times
 set timeoutlen=1000 ttimeoutlen=0
 
-set ttymouse=xterm2
 set mouse=a
 
 let mapleader = ","
@@ -120,7 +118,6 @@ tnoremap <C-J> <C-W><C-J>
 tnoremap <C-K> <C-W><C-K>
 tnoremap <C-L> <C-W><C-L>
 tnoremap <C-H> <C-W><C-H>
-tnoremap <C-\> <C-W>N:q!<CR>
 " Quickfix previous/next
 noremap [q :cprev<CR>
 noremap ]q :cnext<CR>
