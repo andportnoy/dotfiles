@@ -4,6 +4,12 @@ call plug#begin()
     " Python linter, requires flake8, run with <F7>
     Plug 'nvie/vim-flake8'
 
+    " Python code formatter
+    Plug 'ambv/black'
+    let g:black_linelength = 79
+    let g:black_skip_string_normalization = 1
+    nmap <F6> :Black<CR>
+
     " Cool colorschemes
     Plug 'sonph/onehalf', {'rtp': 'vim'}
 
@@ -14,10 +20,6 @@ call plug#begin()
     Plug 'scrooloose/nerdtree'
     map <C-n> :NERDTreeToggle<CR>
     let NERDTreeShowBookmarks=1
-
-    " Python autocomplete
-    Plug 'davidhalter/jedi-vim'
-    let g:jedi#force_py_version = 3
 
     Plug 'ctrlpvim/ctrlp.vim'
     let g:ctrlp_types = ['fil']
@@ -43,6 +45,9 @@ call plug#begin()
 
     " C++ highlighting
     Plug 'octol/vim-cpp-enhanced-highlight'
+
+    Plug 'aserebryakov/vim-todo-lists'
+    let g:VimTodoListsMoveItems = 0
 
 
 call plug#end()
