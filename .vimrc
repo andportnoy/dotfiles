@@ -21,10 +21,6 @@ call plug#begin()
     map <C-n> :NERDTreeToggle<CR>
     let NERDTreeShowBookmarks=1
 
-    " Python autocomplete
-    Plug 'davidhalter/jedi-vim'
-    let g:jedi#force_py_version = 3
-
     Plug 'ctrlpvim/ctrlp.vim'
     let g:ctrlp_types = ['fil']
     let g:ctrlp_extensions = ['tag']
