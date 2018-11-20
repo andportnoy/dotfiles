@@ -49,6 +49,8 @@ call plug#begin()
     Plug 'aserebryakov/vim-todo-lists'
     let g:VimTodoListsMoveItems = 0
 
+    Plug 'jamessan/vim-gnupg'
+
 
 call plug#end()
 
