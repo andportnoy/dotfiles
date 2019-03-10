@@ -54,7 +54,11 @@ call plug#begin()
 
 call plug#end()
 
-map <Space> za
+" search for files recursively in subdirs
+set path+=**
+
+" show options when tab completing
+set wildmenu
 
 " use system clipboard
 set clipboard=unnamed
@@ -120,11 +124,6 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-" Use these same keys in the terminal emulator
-tnoremap <C-J> <C-W><C-J>
-tnoremap <C-K> <C-W><C-K>
-tnoremap <C-L> <C-W><C-L>
-tnoremap <C-H> <C-W><C-H>
 " Quickfix previous/next
 noremap [q :cprev<CR>
 noremap ]q :cnext<CR>
