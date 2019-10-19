@@ -3,9 +3,6 @@ call plug#begin()
 
     Plug 'sonph/onehalf', {'rtp': 'vim'}
 
-    Plug 'scrooloose/nerdtree'
-    map <C-n> :NERDTreeToggle<CR>
-
     Plug 'christoomey/vim-tmux-navigator'
 
     Plug 'vim-airline/vim-airline'
@@ -21,17 +18,8 @@ call plug#begin()
 
 call plug#end()
 
-" vim -b : edit binary using xxd-format!
-augroup Binary
-    au!
-    au BufReadPre   *.bin,*.elf,*.elf-core,*.img let &bin=1
-    au BufReadPost  *.bin,*.elf,*.elf-core,*.img if &bin | %!xxd
-    au BufReadPost  *.bin,*.elf,*.elf-core,*.img set ft=xxd | endif
-    au BufWritePre  *.bin,*.elf,*.elf-core,*.img if &bin | %!xxd -r
-    au BufWritePre  *.bin,*.elf,*.elf-core,*.img endif
-    au BufWritePost *.bin,*.elf,*.elf-core,*.img if &bin | %!xxd
-    au BufWritePost *.bin,*.elf,*.elf-core,*.img set nomod | endif
-augroup END
+map <C-n> :Ex<CR>
+
 
 colorscheme onehalfdark
 syntax enable
