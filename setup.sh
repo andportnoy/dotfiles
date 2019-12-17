@@ -1,6 +1,7 @@
 # link config files
 ln -s $HOME/dotfiles/.vimrc $HOME/.vimrc
 ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
+mkdir -p $HOME/.config/alacritty
 ln -s $HOME/dotfiles/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 
 # install Vim Plug
