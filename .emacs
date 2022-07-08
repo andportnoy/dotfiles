@@ -13,6 +13,9 @@
  '(custom-enabled-themes '(wombat))
  '(package-selected-packages '(## magit))
  '(scroll-bar-mode nil))
+ '(tool-bar-mode nil)
+ '(menu-bar-mode nil)
+ '(tooltip-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -26,8 +29,13 @@
                     tramp-file-name-regexp))
 (setq tramp-verbose 1)
 
-(setq-default c-basic-offset 8)
+;; wrap text at 80 columns
+(add-hook 'text-mode-hook #'auto-fill-mode)
+(setq-default fill-column 80)
+
 (global-set-key (kbd "M-o") 'other-window)
+(setq sentence-end-double-space nil)
+(setq show-paren-delay 0)
 
 (require 'package)
 (add-to-list 'package-archives
