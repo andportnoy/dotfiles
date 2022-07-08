@@ -12,7 +12,7 @@
  '(c-basic-offset 8)
  '(custom-enabled-themes '(wombat))
  '(package-selected-packages '(## magit))
- '(scroll-bar-mode nil))
+ '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(menu-bar-mode nil)
  '(tooltip-mode nil))
