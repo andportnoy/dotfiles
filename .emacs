@@ -26,6 +26,9 @@
                     tramp-file-name-regexp))
 (setq tramp-verbose 1)
 
+(setq-default c-basic-offset 8)
+(global-set-key (kbd "M-o") 'other-window)
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
