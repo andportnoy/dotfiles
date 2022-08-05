@@ -13,11 +13,11 @@
  '(column-number-mode t)
  '(custom-enabled-themes '(wombat))
  '(global-auto-revert-mode t)
- '(package-selected-packages '(## magit))
+ '(menu-bar-mode nil)
+ '(package-selected-packages '(vterm ## magit))
  '(scroll-bar-mode nil)
  '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(tool-bar-mode nil)
- '(menu-bar-mode nil)
  '(tooltip-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -48,3 +48,6 @@
 
 (setq-default show-trailing-whitespace t)
 (setq backup-directory-alist '(("." . "~/emacs-backups")))
+
+(setenv "GPG_AGENT_INFO" nil)
+(setq epa-pinentry-mode 'loopback)
