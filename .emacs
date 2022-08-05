@@ -12,6 +12,7 @@
  '(c-basic-offset 8)
  '(column-number-mode t)
  '(custom-enabled-themes '(wombat))
+ '(global-auto-revert-mode t)
  '(package-selected-packages '(## magit))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
