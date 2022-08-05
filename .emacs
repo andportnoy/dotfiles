@@ -27,10 +27,10 @@
  )
 (set-face-attribute 'default nil :height 150)
 (setq vc-ignore-dir-regexp
-      (format "%s\\|%s"
-                    vc-ignore-dir-regexp
-                    tramp-file-name-regexp))
-(setq tramp-verbose 1)
+      (format "\\(%s\\)\\|\\(%s\\)"
+              vc-ignore-dir-regexp
+              tramp-file-name-regexp))
+(setq tramp-verbose 3)
 
 ;; wrap text at 80 columns
 (add-hook 'text-mode-hook #'auto-fill-mode)
