@@ -47,3 +47,4 @@
   :ensure t)
 
 (setq-default show-trailing-whitespace t)
+(setq backup-directory-alist '(("." . "~/emacs-backups")))
