@@ -10,6 +10,7 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(c-basic-offset 8)
+ '(column-number-mode t)
  '(custom-enabled-themes '(wombat))
  '(package-selected-packages '(## magit))
  '(scroll-bar-mode nil)
