@@ -15,6 +15,7 @@
  '(global-auto-revert-mode t)
  '(package-selected-packages '(## magit))
  '(scroll-bar-mode nil)
+ '(initial-frame-alist (quote ((fullscreen . maximized))))
  '(tool-bar-mode nil)
  '(menu-bar-mode nil)
  '(tooltip-mode nil))
