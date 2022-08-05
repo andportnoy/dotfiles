@@ -43,5 +43,7 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
+(use-package vterm
+  :ensure t)
 
 (setq-default show-trailing-whitespace t)
