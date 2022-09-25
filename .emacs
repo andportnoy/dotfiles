@@ -50,7 +50,7 @@
 (defun switch-to-vterm ()
   (interactive)
   (if (string= (buffer-name) "*vterm*")
-      (switch-to-buffer nil)
+      (switch-to-buffer (other-buffer (current-buffer) t))
     (vterm)))
 (global-set-key (kbd "M-[") 'switch-to-vterm)
 
