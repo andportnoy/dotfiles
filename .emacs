@@ -54,6 +54,13 @@
     (vterm)))
 (global-set-key (kbd "M-[") 'switch-to-vterm)
 
+(defun switch-to-notes ()
+  (interactive)
+  (if (string= (buffer-name) "notes.org")
+      (switch-to-buffer (other-buffer (current-buffer) t))
+    (switch-to-buffer "notes.org")))
+(global-set-key (kbd "M-]") 'switch-to-notes)
+
 (setq-default show-trailing-whitespace t)
 (put 'scroll-left 'disabled nil)
 (setq backup-directory-alist '(("." . "~/.emacs_backups")))
