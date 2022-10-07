@@ -43,6 +43,10 @@
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
+(setq vterm-max-scrollback 100000)
+(add-hook 'vterm-mode-hook
+	  (lambda ()
+	    (setq-local show-trailing-whitespace nil)))
 
 (setenv "GPG_AGENT_INFO" nil)
 (setq epa-pinentry-mode 'loopback)
