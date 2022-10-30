@@ -1,9 +1,6 @@
 call plug#begin()
 	Plug 'christoomey/vim-tmux-navigator'
-	Plug 'sonph/onehalf', {'rtp': 'vim'}
 call plug#end()
-
-colorscheme onehalfdark
 
 map <C-n> :bn<CR>
 map <C-p> :bp<CR>
