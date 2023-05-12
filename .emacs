@@ -13,8 +13,19 @@
  '(custom-enabled-themes '(wombat))
  '(enable-remote-dir-locals t)
  '(menu-bar-mode nil)
+ '(org-agenda-files
+   '("~/gtd/calendar.org" "/home/aportnoy/gtd/projects.org" "/home/aportnoy/gtd/actions.org"))
+ '(org-capture-templates
+   '(("j" "Journal entry" entry
+      (file "~/org/journal.org")
+      "* %T
+%?")
+     ("i" "GTD \"in\" item" entry
+      (file "~/gtd/in.org")
+      "* NEW %?")))
+ '(org-startup-indented t)
  '(package-selected-packages
-   '(free-keys jupyter clang-format python-black vterm ## magit))
+   '(racket-mode ein free-keys jupyter clang-format python-black vterm ## magit))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
@@ -35,6 +46,14 @@
 ;; wrap text at 80 columns
 (add-hook 'text-mode-hook #'auto-fill-mode)
 (setq-default fill-column 80)
+
+;; show column number
+(setq column-number-mode t)
+
+;; global org keys recommended in the compact guide
+(global-set-key (kbd "C-c l") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-c c") #'org-capture)
 
 (global-set-key (kbd "M-o") 'other-window)
 (setq sentence-end-double-space nil)
@@ -64,6 +83,28 @@
       (switch-to-buffer (other-buffer (current-buffer) t))
     (switch-to-buffer "notes.org")))
 (global-set-key (kbd "M-]") 'switch-to-notes)
+
+(defun ifdef-surround-region (a b v)
+  "Surround the region defined by A and B with #ifdef V/#endif directives."
+  (interactive (list (region-beginning)
+		     (region-end)
+		     (let ((default "DEBUG"))
+		       (read-string
+			(format "Variable (default %s): " default) nil nil default))))
+  (save-excursion
+    (goto-char a)
+    (beginning-of-line)
+    (insert (format "#ifdef %s\n" v))
+    (goto-char b)
+    (beginning-of-line 2)
+    (insert "#endif\n")))
+
+; scheme
+(setq scheme-program-name "csi")
+
+; common lisp
+(load (expand-file-name "~/quicklisp/slime-helper.el"))
+(setq inferior-lisp-program "/usr/bin/sbcl")
 
 (setq-default show-trailing-whitespace t)
 (put 'scroll-left 'disabled nil)
