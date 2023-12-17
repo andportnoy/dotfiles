@@ -56,6 +56,7 @@
 (global-set-key (kbd "C-c c") #'org-capture)
 
 (global-set-key (kbd "M-o") 'other-window)
+(global-set-key (kbd "M-O") '(lambda () (interactive) (other-window -1)))
 (setq sentence-end-double-space nil)
 (setq show-paren-delay 0)
 
