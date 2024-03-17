@@ -210,7 +210,9 @@
 (setq backup-directory-alist '(("." . "~/.emacs_backups")))
 (use-package eglot
   :config
-  (setq eldoc-echo-area-use-multiline-p nil))
+  (setq eldoc-echo-area-use-multiline-p nil)
+  (setq eglot-extend-to-xref t)
+)
 
 (add-hook 'eglot-managed-mode-hook (lambda () (flymake-mode -1)))
 ;; (windmove-default-keybindings)
