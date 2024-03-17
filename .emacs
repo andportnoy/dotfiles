@@ -136,7 +136,7 @@
 (global-set-key (kbd "C-c c") #'org-capture)
 (bind-keys*
      ("M-o" . other-window)
-     ("M-O" . '(lambda () (interactive) (other-window -1))))
+     ("M-O" . (lambda () (interactive) (other-window -1))))
 ;;(global-set-key (kbd "M-o") 'other-window)
 ;;(global-set-key (kbd "M-O") '(lambda () (interactive) (other-window -1)))
 (setq sentence-end-double-space nil)
