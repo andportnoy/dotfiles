@@ -28,9 +28,9 @@
  '(org-goto-interface 'outline-path-completion)
  '(org-startup-indented t)
  '(package-selected-packages
-   '(## clang-format eglot ein free-keys imenu-list jupyter lsp-mode magit
-	multi-vterm org-contrib ox-slack python-black racket-mode vterm
-	vterm-toggle yaml-mode))
+   '(## clang-format free-keys imenu-list jupyter magit
+	multi-vterm org-contrib racket-mode vterm
+	vterm-toggle))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
@@ -108,7 +108,8 @@
       (setq-local treesit-simple-indent-rules `((cpp . ,new-rules))))))
 
 (add-hook 'c++-ts-mode-hook 'prepend-google-c++-indent-rules)
-
+(add-hook 'c++-ts-mode-hook (lambda () (setq indent-tabs-mode nil)))
+(add-hook 'c-ts-mode-hook (lambda () (setq indent-tabs-mode nil)))
 ;; pylsp, maybe other stuff
 (setenv "PATH"
         (concat
@@ -137,6 +138,11 @@
 (bind-keys*
      ("M-o" . other-window)
      ("M-O" . (lambda () (interactive) (other-window -1))))
+(add-hook 'org-mode-hook
+	  (lambda () (auto-fill-mode 0)))
+(add-hook 'org-mode-hook
+	  (lambda () (visual-line-mode 1)))
+
 ;;(global-set-key (kbd "M-o") 'other-window)
 ;;(global-set-key (kbd "M-O") '(lambda () (interactive) (other-window -1)))
 (setq sentence-end-double-space nil)
@@ -170,6 +176,14 @@
 (setq remote-file-name-inhibit-locks t)
 ;; limit VC backends to Git to speed up Tramp checks
 (setq vc-handled-backends '(Git))
+;; Tramp invokes /bin/bash with -norc which helps prevent shell config script in
+;; Docker containers from clobbering PS1 which Tramp sets to a very specific
+;; value. If this value is clobbered, Tramp goes into an infinite loop waiting
+;; for it to show up.
+;; /bin/sh -norc also works.
+;; https://github.com/emacs-mirror/emacs/blob/f283144658259f209efdef78c576b43832c9c479/lisp/net/tramp.el#L6043-L6050
+(add-to-list 'tramp-connection-properties
+             (list nil "remote-shell" "/bin/bash"))
 
 (defun switch-to-vterm ()
   (interactive)
@@ -180,9 +194,9 @@
 
 (defun switch-to-notes ()
   (interactive)
-  (if (string= (buffer-name) "notes.org")
+  (if (string= (buffer-name) "log.org")
       (switch-to-buffer (other-buffer (current-buffer) t))
-    (switch-to-buffer "notes.org")))
+    (find-file "~/log.org")))
 (global-set-key (kbd "M-]") 'switch-to-notes)
 
 (defun ifdef-surround-region (a b v)
@@ -217,4 +231,5 @@
 (add-hook 'eglot-managed-mode-hook (lambda () (flymake-mode -1)))
 ;; (windmove-default-keybindings)
 (winner-mode)
+(setq frame-resize-pixelwise t)
 (toggle-frame-fullscreen)
