@@ -107,6 +107,7 @@
     (let ((new-rules (append extra-rules rules)))
       (setq-local treesit-simple-indent-rules `((cpp . ,new-rules))))))
 
+(setq indent-tabs-mode nil)
 (add-hook 'c++-ts-mode-hook 'prepend-google-c++-indent-rules)
 (add-hook 'c++-ts-mode-hook (lambda () (setq indent-tabs-mode nil)))
 (add-hook 'c-ts-mode-hook (lambda () (setq indent-tabs-mode nil)))
@@ -180,10 +181,18 @@
 ;; Docker containers from clobbering PS1 which Tramp sets to a very specific
 ;; value. If this value is clobbered, Tramp goes into an infinite loop waiting
 ;; for it to show up.
-;; /bin/sh -norc also works.
+;; /bin/sh -norc should also work but I don't know how to pass that extra arg.
 ;; https://github.com/emacs-mirror/emacs/blob/f283144658259f209efdef78c576b43832c9c479/lisp/net/tramp.el#L6043-L6050
 (add-to-list 'tramp-connection-properties
              (list nil "remote-shell" "/bin/bash"))
+
+;; process-file-shell-command resets the shell using
+;; with-connection-local-variables, so I think I also need the below
+;; to counteract that
+(connection-local-set-profile-variables 'remote-bash
+   '((shell-file-name . "/bin/bash")))
+
+(connection-local-set-profiles nil 'remote-bash)
 
 (defun switch-to-vterm ()
   (interactive)
