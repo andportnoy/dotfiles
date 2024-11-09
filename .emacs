@@ -179,6 +179,10 @@
 	  (lambda ()
 	    (setq-local show-trailing-whitespace nil)))
 
+;; snappier vterm, default is 0.1 and feels laggy
+;; nil would be extreme
+(setq vterm-timer-delay 0.01)
+
 (use-package vterm
   :config
   (add-to-list 'vterm-tramp-shells
