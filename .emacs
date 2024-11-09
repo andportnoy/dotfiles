@@ -291,4 +291,12 @@
 ;; (windmove-default-keybindings)
 (winner-mode)
 (setq frame-resize-pixelwise t)
+
+(setq gnus-select-method
+      '(nnimap "fastmail"
+	       (nnimap-address "imap.fastmail.com")
+	       (nnimap-server-port 993)
+	       (nnimap-stream ssl)))
+
+
 (toggle-frame-fullscreen)
