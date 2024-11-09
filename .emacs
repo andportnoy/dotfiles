@@ -1,15 +1,18 @@
+;; general appearance and behavior
 (setq mac-command-modifier 'meta
-      mac-option-modifier 'super)
+      mac-option-modifier 'super
+      custom-enabled-themes '(wombat)
+      menu-bar-mode nil
+      scroll-bar-mode nil
+      tool-bar-mode nil
+      tooltip-mode nil)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(custom-enabled-themes '(wombat))
  '(epg-gpg-program "/opt/homebrew/bin/gpg")
- '(menu-bar-mode nil)
  '(org-agenda-files
    '("~/gtd/projects.org"))
  '(org-export-backends '(ascii html icalendar latex md confluence))
@@ -21,10 +24,7 @@
  '(package-vc-selected-packages
    '((eglot-booster :vc-backend Git :url
 		    "https://github.com/jdtsmith/eglot-booster")))
- '(scroll-bar-mode nil)
  '(send-mail-function 'smtpmail-send-it)
- '(tool-bar-mode nil)
- '(tooltip-mode nil)
  '(vterm-max-scrollback 100000))
 
 (defun ap/org-capture-hook ()
@@ -127,17 +127,10 @@
     (let ((new-rules (append extra-rules rules)))
       (setq-local treesit-simple-indent-rules `((cpp . ,new-rules))))))
 
-(setq indent-tabs-mode nil)
 (add-hook 'c++-ts-mode-hook 'prepend-google-c++-indent-rules)
-(add-hook 'c++-ts-mode-hook (lambda () (setq indent-tabs-mode nil)))
-(add-hook 'c-ts-mode-hook (lambda () (setq indent-tabs-mode nil)))
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(setq indent-tabs-mode nil)
+
 (set-face-attribute 'default nil :height 140)
 
 ;; wrap text at 80 columns
