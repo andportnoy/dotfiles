@@ -118,11 +118,6 @@
 (add-hook 'c++-ts-mode-hook 'prepend-google-c++-indent-rules)
 (add-hook 'c++-ts-mode-hook (lambda () (setq indent-tabs-mode nil)))
 (add-hook 'c-ts-mode-hook (lambda () (setq indent-tabs-mode nil)))
-;; pylsp, maybe other stuff
-(setenv "PATH"
-        (concat
-         (getenv "PATH")
-	 path-separator "~/.local/bin"))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
