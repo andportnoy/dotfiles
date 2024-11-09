@@ -11,11 +11,6 @@
    [default default default italic underline success warning error])
  '(custom-enabled-themes '(wombat))
  '(epg-gpg-program "/opt/homebrew/bin/gpg")
- '(exec-path
-   '("/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin"
-     "/Applications/Emacs.app/Contents/MacOS/bin-arm64-11"
-     "/Applications/Emacs.app/Contents/MacOS/libexec-arm64-11"
-     "/Applications/Emacs.app/Contents/MacOS/libexec" "/opt/homebrew/bin/"))
  '(menu-bar-mode nil)
  '(org-agenda-files
    '("~/gtd/calendar.org" "/home/aportnoy/gtd/projects.org"
