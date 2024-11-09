@@ -24,6 +24,7 @@
    '((eglot-booster :vc-backend Git :url
 		    "https://github.com/jdtsmith/eglot-booster")))
  '(scroll-bar-mode nil)
+ '(send-mail-function 'smtpmail-send-it)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
  '(vterm-max-scrollback 100000))
