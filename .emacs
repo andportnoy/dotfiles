@@ -7,6 +7,9 @@
 (setq mac-command-modifier 'meta)
 (setq mac-option-modifier 'super)
 
+;; package-install populates package-selected-packages and
+;; package-vc-selected-packages automatically under custom-set-variables, so it
+;; makes sense to keep them here
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
