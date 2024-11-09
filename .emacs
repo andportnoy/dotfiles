@@ -280,6 +280,12 @@
   (setq eglot-extend-to-xref t)
 )
 
+;; note this requires emacs-lsp-booster locally or on the remote host
+;; (use-package eglot-booster
+;;   :after eglot
+;;   :config (eglot-booster-mode))
+
+
 (add-hook 'eglot-managed-mode-hook (lambda () (flymake-mode -1)))
 ;; (windmove-default-keybindings)
 (winner-mode)
