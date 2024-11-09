@@ -138,6 +138,8 @@
 (global-set-key (kbd "C-c l") #'org-store-link)
 (global-set-key (kbd "C-c a") #'org-agenda)
 (global-set-key (kbd "C-c c") #'org-capture)
+;; shortcut equivalent to C-c c i
+(global-set-key (kbd "C-c i") (lambda () (interactive) (org-capture nil "i")))
 (bind-keys*
      ("M-o" . other-window)
      ("M-O" . (lambda () (interactive) (other-window -1))))
