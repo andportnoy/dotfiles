@@ -268,6 +268,9 @@
     (beginning-of-line 2)
     (insert "#endif\n")))
 
+; pull man pages from remote machine if needed
+(setq-default Man-support-remote-systems t)
+
 ; scheme
 (setq scheme-program-name "csi")
 
