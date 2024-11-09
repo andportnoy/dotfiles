@@ -43,6 +43,19 @@
       '(("j" "Journal entry" entry (file "~/org/journal.org") "* %T\12%?")
 	("i" "GTD \"in\" item" entry (file "~/gtd/in.org") "* %?"
 	 :prepare-finalize ap/org-capture-hook)))
+
+(setq org-log-into-drawer t)
+(setq org-agenda-breadcrumbs-separator "/")
+
+;;(setq org-agenda-prefix-format
+;;      (cons `(todo . ,(concat " %i %-12:c%b\n" (make-string 16 ? )))
+;;	    org-agenda-prefix-format))
+
+(with-eval-after-load 'org-agenda
+  (setq org-agenda-prefix-format
+	(cons `(todo . "%b\n  ")
+	      org-agenda-prefix-format)))
+
 ;; treesitter grammars
 ;; https://www.masteringemacs.org/article/how-to-get-started-tree-sitter
 (setq treesit-language-source-alist
@@ -148,6 +161,11 @@
 (add-hook 'org-mode-hook
 	  (lambda () (visual-line-mode 1)))
 
+(setq org-log-refile 'time)
+(setq org-refile-use-outline-path 'file)
+(setq org-refile-targets
+      '((("in.org" "trash.org" "done.org" "someday.org") . (:level . 0))
+	(("projects.org") . (:maxlevel . 9))))
 ;;(global-set-key (kbd "M-o") 'other-window)
 ;;(global-set-key (kbd "M-O") '(lambda () (interactive) (other-window -1)))
 (setq sentence-end-double-space nil)
