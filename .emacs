@@ -201,8 +201,6 @@
 ;;               vc-ignore-dir-regexp
 ;;               tramp-file-name-regexp))
 (setq remote-file-name-inhibit-locks t)
-;; limit VC backends to Git to speed up Tramp checks
-(setq vc-handled-backends '(Git))
 ;; Tramp invokes /bin/bash with -norc which helps prevent shell config script in
 ;; Docker containers from clobbering PS1 which Tramp sets to a very specific
 ;; value. If this value is clobbered, Tramp goes into an infinite loop waiting
