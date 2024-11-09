@@ -10,7 +10,6 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(custom-enabled-themes '(wombat))
- '(enable-remote-dir-locals t)
  '(epg-gpg-program "/opt/homebrew/bin/gpg")
  '(exec-path
    '("/usr/local/bin" "/usr/bin" "/bin" "/usr/sbin" "/sbin"
