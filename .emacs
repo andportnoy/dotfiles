@@ -18,9 +18,11 @@
  '(org-goto-interface 'outline-path-completion)
  '(org-startup-indented t)
  '(package-selected-packages
-   '(## clang-format free-keys imenu-list jupyter magit
-	multi-vterm org-contrib racket-mode vterm
-	vterm-toggle))
+   '(## clang-format eglot-booster free-keys imenu-list json-mode magit multi-vterm
+	org-contrib racket-mode slurm-mode vterm vterm-toggle))
+ '(package-vc-selected-packages
+   '((eglot-booster :vc-backend Git :url
+		    "https://github.com/jdtsmith/eglot-booster")))
  '(scroll-bar-mode nil)
  '(tool-bar-mode nil)
  '(tooltip-mode nil)
