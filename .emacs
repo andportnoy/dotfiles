@@ -129,11 +129,9 @@
 
 (set-face-attribute 'default nil :height 140)
 
-;; wrap text at 80 columns
-(add-hook 'text-mode-hook #'auto-fill-mode)
-(setq-default fill-column 80)
+(setq fill-column 80)
 
-;; show column number
+;; show column number in echo
 (setq column-number-mode t)
 
 ;; global org keys recommended in the compact guide
@@ -142,11 +140,10 @@
 (global-set-key (kbd "C-c c") #'org-capture)
 ;; shortcut equivalent to C-c c i
 (global-set-key (kbd "C-c i") (lambda () (interactive) (org-capture nil "i")))
+;; set these keys in a way that overrides key bindings in other modes
 (bind-keys*
      ("M-o" . other-window)
      ("M-O" . (lambda () (interactive) (other-window -1))))
-(add-hook 'org-mode-hook
-	  (lambda () (auto-fill-mode 0)))
 (add-hook 'org-mode-hook
 	  (lambda () (visual-line-mode 1)))
 
