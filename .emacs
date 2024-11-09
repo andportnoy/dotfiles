@@ -63,7 +63,8 @@
       '((bash "https://github.com/tree-sitter/tree-sitter-bash")
 	(python "https://github.com/tree-sitter/tree-sitter-python")
 	(c "https://github.com/tree-sitter/tree-sitter-c")
-	(cpp "https://github.com/tree-sitter/tree-sitter-cpp")))
+	(cpp "https://github.com/tree-sitter/tree-sitter-cpp")
+	(llvm "https://github.com/benwilliamgraham/tree-sitter-llvm")))
 
 ;; override regular modes with treesitter-based modes
 (setq major-mode-remap-alist
