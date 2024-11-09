@@ -15,9 +15,6 @@
  '(org-agenda-files
    '("~/gtd/calendar.org" "/home/aportnoy/gtd/projects.org"
      "/home/aportnoy/gtd/actions.org"))
- '(org-capture-templates
-   '(("j" "Journal entry" entry (file "~/org/journal.org") "* %T\12%?")
-     ("i" "GTD \"in\" item" entry (file "~/gtd/in.org") "* NEW %?")))
  '(org-export-backends '(ascii html icalendar latex md confluence))
  '(org-goto-interface 'outline-path-completion)
  '(org-startup-indented t)
@@ -30,6 +27,21 @@
  '(tooltip-mode nil)
  '(vterm-max-scrollback 100000))
 
+(defun ap/org-capture-hook ()
+  (beginning-of-buffer)
+  (forward-char 2)
+  (insert "CLARIFY ")
+  (end-of-buffer)
+  (insert ":LOGBOOK:\n")
+  (insert "- Filed ")
+  (org-insert-timestamp (current-time) t t)
+  (insert "\n")
+  (insert ":END:"))
+
+(setq org-capture-templates
+      '(("j" "Journal entry" entry (file "~/org/journal.org") "* %T\12%?")
+	("i" "GTD \"in\" item" entry (file "~/gtd/in.org") "* %?"
+	 :prepare-finalize ap/org-capture-hook)))
 ;; treesitter grammars
 ;; https://www.masteringemacs.org/article/how-to-get-started-tree-sitter
 (setq treesit-language-source-alist
