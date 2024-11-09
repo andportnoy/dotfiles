@@ -17,8 +17,7 @@
 	org-contrib racket-mode slurm-mode vterm vterm-toggle))
  '(package-vc-selected-packages
    '((eglot-booster :vc-backend Git :url
-		    "https://github.com/jdtsmith/eglot-booster")))
- '(vterm-max-scrollback 100000))
+		    "https://github.com/jdtsmith/eglot-booster"))))
 
 
 (defun ap/org-capture-hook ()
