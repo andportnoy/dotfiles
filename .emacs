@@ -213,10 +213,29 @@
 ;; process-file-shell-command resets the shell using
 ;; with-connection-local-variables, so I think I also need the below
 ;; to counteract that
-(connection-local-set-profile-variables 'remote-bash
-   '((shell-file-name . "/bin/bash")))
+(connection-local-set-profile-variables
+ 'sane-remote
+ '((shell-file-name . "/bin/bash")
+   ;; this prevents Tramp from deviating from the default remote path
+   (tramp-remote-path . (tramp-own-remote-path))))
 
-(connection-local-set-profiles nil 'remote-bash)
+(connection-local-set-profiles nil 'sane-remote)
+
+;; this prevents tramp from clobbering remote PATH
+;; https://stackoverflow.com/questions/26630640/tramp-ignores-tramp-remote-path#26649558
+;; (add-to-list 'tramp-remote-path 'tramp-own-remote-path)
+
+;; Tramp hardcodes PAGER=cat for whatever reason, but we want less
+(setq vterm-environment
+      (append vterm-environment '("PAGER=less" "EDITOR=vim")))
+
+(setq vc-handled-backends nil)
+
+;; importantly, dir local variables are disabled in remote directories by default
+;; otherwise there's a big perf penalty
+
+;; this speeds up Python browsing + file opening experience
+(global-eldoc-mode -1)
 
 (defun switch-to-vterm ()
   (interactive)
