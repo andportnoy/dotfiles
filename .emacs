@@ -185,9 +185,6 @@
   (add-to-list 'vterm-tramp-shells
 	       '("scp" "/bin/bash")))
 
-(setenv "GPG_AGENT_INFO" nil)
-(setq epa-pinentry-mode 'loopback)
-
 ;; https://www.gnu.org/software/emacs/manual/html_node/tramp/Frequently-Asked-Questions.html
 ;; (setq vc-ignore-dir-regexp
 ;;       (format "\\(%s\\)\\|\\(%s\\)"
