@@ -4,8 +4,8 @@
 (tool-bar-mode -1)
 (tooltip-mode -1)
 
-(setq mac-command-modifier 'meta
-      mac-option-modifier 'super)
+(setq mac-command-modifier 'meta)
+(setq mac-option-modifier 'super)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -13,11 +13,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(epg-gpg-program "/opt/homebrew/bin/gpg")
- '(org-agenda-files
-   '("~/gtd/projects.org"))
- '(org-export-backends '(ascii html icalendar latex md confluence))
- '(org-goto-interface 'outline-path-completion)
- '(org-startup-indented t)
  '(package-selected-packages
    '(## clang-format eglot-booster free-keys imenu-list json-mode magit multi-vterm
 	org-contrib racket-mode slurm-mode vterm vterm-toggle))
@@ -25,6 +20,7 @@
    '((eglot-booster :vc-backend Git :url
 		    "https://github.com/jdtsmith/eglot-booster")))
  '(vterm-max-scrollback 100000))
+
 
 (defun ap/org-capture-hook ()
   (beginning-of-buffer)
@@ -37,17 +33,16 @@
   (insert "\n")
   (insert ":END:"))
 
+(setq org-agenda-files '("~/gtd/projects.org"))
+(setq org-export-backends '(ascii html icalendar latex md confluence))
+(setq org-goto-interface 'outline-path-completion)
+(setq org-startup-indented t)
 (setq org-capture-templates
       '(("j" "Journal entry" entry (file "~/org/journal.org") "* %T\12%?")
 	("i" "GTD \"in\" item" entry (file "~/gtd/in.org") "* %?"
 	 :prepare-finalize ap/org-capture-hook)))
-
 (setq org-log-into-drawer t)
 (setq org-agenda-breadcrumbs-separator "/")
-
-;;(setq org-agenda-prefix-format
-;;      (cons `(todo . ,(concat " %i %-12:c%b\n" (make-string 16 ? )))
-;;	    org-agenda-prefix-format))
 
 (with-eval-after-load 'org-agenda
   (setq org-agenda-prefix-format
