@@ -1,7 +1,11 @@
+(load-theme 'wombat)
+(set-scroll-bar-mode nil)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(tooltip-mode -1)
+
 (setq mac-command-modifier 'meta
       mac-option-modifier 'super)
-
-(load-theme 'wombat)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -9,7 +13,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(epg-gpg-program "/opt/homebrew/bin/gpg")
- '(menu-bar-mode nil)
  '(org-agenda-files
    '("~/gtd/projects.org"))
  '(org-export-backends '(ascii html icalendar latex md confluence))
@@ -21,10 +24,6 @@
  '(package-vc-selected-packages
    '((eglot-booster :vc-backend Git :url
 		    "https://github.com/jdtsmith/eglot-booster")))
- '(scroll-bar-mode nil)
- '(send-mail-function 'smtpmail-send-it)
- '(tool-bar-mode nil)
- '(tooltip-mode nil)
  '(vterm-max-scrollback 100000))
 
 (defun ap/org-capture-hook ()
@@ -294,6 +293,7 @@
 (winner-mode)
 (setq frame-resize-pixelwise t)
 
+(setq send-mail-function 'smtpmail-send-it)
 (setq gnus-select-method
       '(nnimap "fastmail"
 	       (nnimap-address "imap.fastmail.com")
