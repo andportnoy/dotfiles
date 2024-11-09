@@ -13,8 +13,7 @@
  '(epg-gpg-program "/opt/homebrew/bin/gpg")
  '(menu-bar-mode nil)
  '(org-agenda-files
-   '("~/gtd/calendar.org" "/home/aportnoy/gtd/projects.org"
-     "/home/aportnoy/gtd/actions.org"))
+   '("~/gtd/projects.org"))
  '(org-export-backends '(ascii html icalendar latex md confluence))
  '(org-goto-interface 'outline-path-completion)
  '(org-startup-indented t)
