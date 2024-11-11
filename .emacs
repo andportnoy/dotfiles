@@ -201,7 +201,15 @@
  'sane-remote
  '((shell-file-name . "/bin/bash")
    ;; this prevents Tramp from deviating from the default remote path
-   (tramp-remote-path . (tramp-own-remote-path))))
+   (tramp-remote-path . (tramp-own-remote-path))
+   ;; this one is to speed up remote magit in certain cases
+   ;; doesn't work for me unfortunately
+   ;; https://github.com/magit/magit/issues/5220
+   ;; (tramp-direct-async-process . t)
+ ))
+;; unfortunately this doesn't work, I still see hangs
+;; https://github.com/magit/magit/issues/5220
+;; (setq magit-tramp-pipe-stty-settings "pty")
 
 (connection-local-set-profiles nil 'sane-remote)
 
