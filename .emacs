@@ -294,5 +294,27 @@ AlignTrailingComments:
 	       (nnimap-server-port 993)
 	       (nnimap-stream ssl)))
 
+;; remove most of sections populated by magit to speed up performance on remote
+(use-package magit
+  :config
+  (remove-hook 'magit-status-headers-hook 'magit-insert-tags-header)
+  (remove-hook 'magit-status-headers-hook 'magit-insert-head-branch-header)
+  (remove-hook 'magit-status-headers-hook 'magit-insert-push-branch-header)
+  (remove-hook 'magit-status-headers-hook 'magit-insert-upstream-branch-header)
+  (remove-hook 'magit-status-headers-hook 'magit-insert-diff-filter-header)
+  (remove-hook 'magit-status-sections-hook 'magit-insert-unpushed-to-upstream-or-recent)
+  (remove-hook 'magit-status-sections-hook 'magit-insert-merge-log)
+  (remove-hook 'magit-status-sections-hook 'magit-insert-stashes)
+  (remove-hook 'magit-status-sections-hook 'magit-insert-rebase-sequence)
+  (remove-hook 'magit-status-sections-hook 'magit-insert-am-sequence)
+  (remove-hook 'magit-status-sections-hook 'magit-insert-sequencer-sequence)
+  (remove-hook 'magit-status-sections-hook 'magit-insert-bisect-output)
+  (remove-hook 'magit-status-sections-hook 'magit-insert-bisect-rest)
+  (remove-hook 'magit-status-sections-hook 'magit-insert-bisect-log)
+  (remove-hook 'magit-status-sections-hook 'magit-insert-unpushed-to-pushremote)
+  (remove-hook 'magit-status-sections-hook 'magit-insert-unpulled-from-pushremote)
+  (remove-hook 'magit-status-sections-hook 'magit-insert-unpulled-from-upstream)
+  )
+
 
 (toggle-frame-fullscreen)
