@@ -325,5 +325,6 @@ AlignTrailingComments:
   (remove-hook 'magit-status-sections-hook 'magit-insert-unpulled-from-upstream)
   )
 
+(setq epa-pinentry-mode 'loopback)
 
 (toggle-frame-fullscreen)
