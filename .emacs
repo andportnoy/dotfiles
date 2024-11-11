@@ -278,6 +278,7 @@ SortIncludes: Never,
 AlignTrailingComments:
   {Kind: Always}
 }")
+(global-set-key (kbd "C-M-TAB") #'clang-format-buffer)
 
 ;; note this requires emacs-lsp-booster locally or on the remote host
 ;; (use-package eglot-booster
