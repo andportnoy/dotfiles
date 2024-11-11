@@ -266,6 +266,18 @@
   (setq eglot-extend-to-xref t)
 )
 
+;; need to use setq-default here specifically, setq doesn't have effect
+;; based on https://github.com/openxla/xla/blob/main/.clang-format
+(setq-default clang-format-style
+	      "{
+BasedOnStyle: Google,
+Language: Cpp,
+PointerBindsToType: true,
+SortIncludes: Never,
+AlignTrailingComments:
+  {Kind: Always}
+}")
+
 ;; note this requires emacs-lsp-booster locally or on the remote host
 ;; (use-package eglot-booster
 ;;   :after eglot
