@@ -302,6 +302,7 @@ AlignTrailingComments:
 	       (nnimap-stream ssl)))
 
 ;; remove most of sections populated by magit to speed up performance on remote
+;; consider using magit-disabled-section-inserters instead
 (use-package magit
   :config
   (remove-hook 'magit-status-headers-hook 'magit-insert-tags-header)
