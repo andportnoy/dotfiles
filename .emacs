@@ -140,6 +140,7 @@
 (global-set-key (kbd "C-c c") #'org-capture)
 ;; shortcut equivalent to C-c c i
 (global-set-key (kbd "C-c i") (lambda () (interactive) (org-capture nil "i")))
+(global-set-key (kbd "C-c t") (lambda () (interactive) (org-todo-list 5)))
 ;; set these keys in a way that overrides key bindings in other modes
 (bind-keys*
      ("M-o" . other-window)
