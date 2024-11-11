@@ -292,6 +292,10 @@ AlignTrailingComments:
 (winner-mode)
 (setq frame-resize-pixelwise t)
 
+(setq user-full-name "Andrey Portnoy")
+(setq user-mail-address "aportnoy@fastmail.com")
+(setq smtpmail-smtp-server "smtp.fastmail.com")
+(setq smtpmail-smtp-service 587)
 (setq send-mail-function 'smtpmail-send-it)
 (setq gnus-select-method
       '(nnimap "fastmail"
