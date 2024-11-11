@@ -133,6 +133,8 @@
 
 ;; show column number in echo
 (setq column-number-mode t)
+(setq sentence-end-double-space nil)
+(setq show-paren-delay 0)
 
 ;; global org keys recommended in the compact guide
 (global-set-key (kbd "C-c l") #'org-store-link)
@@ -153,10 +155,6 @@
 (setq org-refile-targets
       '((("in.org" "trash.org" "done.org" "someday.org") . (:level . 0))
 	(("projects.org") . (:maxlevel . 9))))
-;;(global-set-key (kbd "M-o") 'other-window)
-;;(global-set-key (kbd "M-O") '(lambda () (interactive) (other-window -1)))
-(setq sentence-end-double-space nil)
-(setq show-paren-delay 0)
 
 (require 'package)
 (add-to-list 'package-archives
