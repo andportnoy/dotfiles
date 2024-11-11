@@ -205,10 +205,6 @@
 
 (connection-local-set-profiles nil 'sane-remote)
 
-;; this prevents tramp from clobbering remote PATH
-;; https://stackoverflow.com/questions/26630640/tramp-ignores-tramp-remote-path#26649558
-;; (add-to-list 'tramp-remote-path 'tramp-own-remote-path)
-
 ;; Tramp hardcodes PAGER=cat for whatever reason, but we want less
 (setq vterm-environment
       (append vterm-environment '("PAGER=less" "EDITOR=vim")))
