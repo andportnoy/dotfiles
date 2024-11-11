@@ -301,6 +301,7 @@ AlignTrailingComments:
 	       (nnimap-server-port 993)
 	       (nnimap-stream ssl)))
 
+(setq magit-refresh-verbose t)
 ;; remove most of sections populated by magit to speed up performance on remote
 ;; consider using magit-disabled-section-inserters instead
 (use-package magit
